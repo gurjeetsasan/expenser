@@ -1,14 +1,18 @@
-<?php 
+x<?php 
 	/*
 		Author: Gurjeet Singh.
 		Date: 09-12-2015
 		Description: This page contains all the functions to Add dailies, Delete dailies, Add category, Delete Category.
 	*/
 
-
 	if( $_REQUEST['action'] == 'addDaily'){
 		
 		$data = array( "ADD Daily" );
+		echo json_encode( $data);
+
+	}elseif( $_REQUEST['action'] == 'listDailies' ){
+		
+		$data = array( "List Dailies"  );
 		echo json_encode( $data);
 
 	}elseif( $_REQUEST['action'] == 'deleteDaily' ){
@@ -20,6 +24,11 @@
 		
 		$data = array( "Add Category" );
 		echo json_encode( $data);	
+
+	}elseif( $_REQUEST['action'] == 'listCategories' ){
+		
+		$data = array( "List Categories"  );
+		echo json_encode( $data);
 
 	}elseif ( $_REQUEST['action'] == 'deleteCategory' ) {
 		
