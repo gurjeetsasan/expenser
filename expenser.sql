@@ -27,6 +27,8 @@ CREATE TABLE `categories` (
   `categoryname` varchar(100) NOT NULL,
   `description` text NOT NULL,
   `user_id` int(11) NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -37,7 +39,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'uncategorized','This is a default category for all the Dailies',1),(2,'test-category','this is a test category.',1),(7,'test-category','test-category Descriptions',1),(8,'test-category','test-category Descriptions',1),(9,'test-category','test-category Descriptions',1),(10,'test-category','test-category Descriptions',1),(11,'test-category','test-category Descriptions',1),(12,'test-category','test-category Descriptions',1),(13,'test-category','test-category Descriptions',1),(14,'test-category','test-category Descriptions',1),(15,'test-category','test-category Descriptions',1);
+INSERT INTO `categories` VALUES (1,'uncategorized','This is a default category for all the Dailies',1,1,'0000-00-00 00:00:00'),(2,'test-category','this is a test category.',1,1,'0000-00-00 00:00:00'),(7,'test-category','test-category Descriptions',1,1,'0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -56,6 +58,7 @@ CREATE TABLE `dailies` (
   `attachment` text NOT NULL,
   `category_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -66,7 +69,7 @@ CREATE TABLE `dailies` (
 
 LOCK TABLES `dailies` WRITE;
 /*!40000 ALTER TABLE `dailies` DISABLE KEYS */;
-INSERT INTO `dailies` VALUES (1,'08-12-2015',100,'notes','attachment',1,1),(2,'08-12-2015',100,'notes','attachment',1,1),(3,'08-12-2015',100,'notes','attachment',1,1);
+INSERT INTO `dailies` VALUES (1,'08-12-2015',100,'notes','attachment',1,1,'0000-00-00 00:00:00'),(2,'08-12-2015',100,'notes','attachment',1,1,'0000-00-00 00:00:00'),(3,'08-12-2015',100,'notes','attachment',1,1,'0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `dailies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -105,4 +108,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-12-08 19:20:28
+-- Dump completed on 2015-12-11 16:16:23
