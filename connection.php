@@ -58,6 +58,15 @@ class  Expenser{
 	}
 
 
+	/*funcion to delete Category. */
+	function deleteCategory( $data = null ){
+		$user_id 		= $data['user_id'];
+		$category_id 	= $data['category_id'];
+
+		echo "Category Deleted Successfully!";
+	}
+
+
 	/* function to get the list of categoories */
 	function getCategories(){
 
@@ -146,6 +155,15 @@ class  Expenser{
 
 		/*reuturn result*/
 		echo json_encode($resultArray);	
+	}
+
+
+	/*funcion to delete Daily. */
+	function deleteDaily( $data = null ){
+		$user_id 		= $data['user_id'];
+		$dailies_id 	= $data['dailies_id'];
+
+		echo "DAily Deleted Successfully!";
 	}
 
 }
