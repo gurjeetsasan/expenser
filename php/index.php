@@ -1,4 +1,4 @@
-x<?php 
+<?php 
 	/*
 		Author: Gurjeet Singh.
 		Date: 09-12-2015
